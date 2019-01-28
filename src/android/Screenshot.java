@@ -75,7 +75,7 @@ public class Screenshot extends CordovaPlugin {
         if (isCrosswalk) {
             webView.getPluginManager().postMessage("captureXWalkBitmap", this);
         } else {
-            View view = webView.getView();//.getRootView();
+            View view = webView.getView().getRootView();//.getRootView();
             view.setDrawingCacheEnabled(true);
             bitmap = Bitmap.createBitmap(view.getDrawingCache());
             view.setDrawingCacheEnabled(false);
